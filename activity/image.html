@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Activity</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no ,user-scalable=0">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script> -->
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.4/vue.min.js'></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <!-- slick - css輪播圖插件 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+
+    <!-- aos - css動畫插件 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+</head>
+
+
+<!-- ontouchstart 行動端監測active -->
+<!-- not-user-selectable 行端端避免長按選取到文字 -->
+
+<body>
+    <div class="not-user-selectable">
+        <div class="slider bannerContainer m-auto" id="bannerSlider">
+            <picture>
+                <source srcset="assets/wideBanner1.jpg" media="(min-width: 992px)">
+                <source srcset="assets/narrowBanner1.jpg" media="(min-width: 0px)">
+                <img class="d-block w-100" srcset="assets/wideBanner1.jpg">
+            </picture>
+            <picture>
+                <source srcset="assets/wideBanner2.jpg" media="(min-width: 992px)">
+                <source srcset="assets/narrowBanner2.jpg" media="(min-width: 0px)">
+                <img class="d-block w-100" :srcset="assets/wideBanner2.jpg">
+            </picture>
+            <picture>
+                <source srcset="assets/wideBanner3.jpg" media="(min-width: 992px)">
+                <source srcset="assets/narrowBanner3.jpg" media="(min-width: 0px)">
+                <img class="d-block w-100" :srcset="assets/wideBanner3.jpg">
+            </picture>
+        </div>
+
+        <!-- 標籤-歡迎介紹 -->
+        <div class="tab_introduce mt-5">
+            <div class="row introduce_inner">
+                <div class="col-12 col-md-6 introduce_left">
+                    <img src="assets/pic1.png" data-aos="zoom-in" data-aos-offset="100px">
+                </div>
+
+                <div class="col-12 col-md-6 introduce_right">
+                    <div class="introduce_title">
+                        <p class="tabText">歡迎來到貓農趣</p>
+                    </div>
+                    <h3>
+                        我們來自不同產業<br>
+                        激盪出不同火花<br>
+                        一分耕耘一分收<strong>『貨』</strong><br>
+                        遊戲內也能兌換實體獎品<br>
+                        一起來當勤勞的貓農夫吧！
+                    </h3>
+                    <img src="assets/pic2.png" class="mw-100 pt-4" data-aos="fade-up">
+                </div>
+            </div>
+        </div>
+
+        <!-- 標籤-活動詳情 -->
+        <div class="tab_contents text-center mt-5" id="tab_contents">
+            <svg width="220" height="220" viewBox="0 0 10 10" class="floatImg svg1">
+                <path
+                    d="M5,8.78a1.65,1.65,0,0,1-1.49-.92,1.31,1.31,0,0,0-1-.72,1.66,1.66,0,0,1-.92-2.83A1.31,1.31,0,0,0,2,3.16a1.66,1.66,0,0,1,2.4-1.75,1.31,1.31,0,0,0,1.22,0h0A1.66,1.66,0,0,1,8,3.16a1.31,1.31,0,0,0,.38,1.16,1.66,1.66,0,0,1-.92,2.83,1.31,1.31,0,0,0-1,.72A1.65,1.65,0,0,1,5,8.78Z"
+                    fill="none" stroke="#C4C0A5" stroke-width="2" stroke-linecap="round"
+                    vector-effect="non-scaling-stroke" />
+            </svg>
+
+            <svg width="100" height="100" viewBox="0 0 10 10" class="floatImg svg2">
+                <path
+                    d="M5,8.78a1.65,1.65,0,0,1-1.49-.92,1.31,1.31,0,0,0-1-.72,1.66,1.66,0,0,1-.92-2.83A1.31,1.31,0,0,0,2,3.16a1.66,1.66,0,0,1,2.4-1.75,1.31,1.31,0,0,0,1.22,0h0A1.66,1.66,0,0,1,8,3.16a1.31,1.31,0,0,0,.38,1.16,1.66,1.66,0,0,1-.92,2.83,1.31,1.31,0,0,0-1,.72A1.65,1.65,0,0,1,5,8.78Z"
+                    fill="none" stroke="#C4C0A5" stroke-width="2" stroke-linecap="round"
+                    vector-effect="non-scaling-stroke" />
+            </svg>
+
+            <div>
+                <div class="tabTitle contents_title mb-5">
+                    <p class="tabText">活動詳情</p>
+                </div>
+            </div>
+
+            <div class="row stepContainer">
+                <div class="col-sm-4 stepItem" data-aos="fade-up">
+                    <img src="assets/step1.png">
+                    <p>遊玩『貓農趣』<br>累積種植作物</p>
+                </div>
+                <div class="col-sm-4 stepItem" data-aos="fade-up">
+                    <img src="assets/step2.png">
+                    <p>作物可至商店兌換<br>『貓貓兌換卷』</p>
+                </div>
+                <div class="col-sm-4 stepItem" data-aos="fade-up">
+                    <img src="assets/step3.png">
+                    <p>至『獎品兌換區』<br>換喜歡的獎品</p>
+                </div>
+                <div class="clearfix">
+                    <div class="c-button l-btn" data-aos="fade-left" onclick="openNav()">&lt;&lt; 更多訊息</div>
+
+                    <div class="c-button r-btn" data-aos="fade-right" onclick="goToPlay()">立即遊玩 &gt;&gt;</div>
+                </div>
+            </div>
+
+            <div class="contents_background"></div>
+        </div>
+
+        <div id="myNav-more" class="myNav-more">
+            <div class="myNav-more-content">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="more-information">
+                    <h1>活動辦法</h1>
+                    <div class="informationContainer">
+                        <div class="information-body">
+                            <div class="activity_sub">活動說明</div>
+                        </div>
+
+                        <div class="information-body">
+                            <div class="information-text">
+                                <ol>
+                                    <li>於活動期間內至<span>『貓農趣』</span>遊玩，並累積兌換卷所需的遊戲作物。</li>
+                                    <li>前往貓農趣遊戲內<span>商店限時專區</span>可兌換<span>『貓貓兌換卷』</span>。</li>
+                                    <li>拿到兌換卷後至官網貓農趣活動頁的<span>『獎品兌換區』</span>兌換，不同獎品所需兌換張數不同。</li>
+                                    <li>請前往<span>『會員背包』</span>中查看貓貓兌換卷及兌換後的獎品。</li>
+                                    <li><span>獎品數量有限兌完為止</span>。</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="information-body">
+                            <div class="activity_sub">獎品寄送</div>
+                        </div>
+                        <div class="information-body">
+                            <div class="information-text">
+                                <ol>
+                                    <li>參加本活動必須填寫正確的會員資料(姓名、電話、住址)以便配送活動獎品。</li>
+                                    <li>台灣本島市(郊)區運費內含，離島地區需酌收運費。</li>
+                                    <li>為確保商品品質，恕<span>無法指定希望配送時段</span>，如有不便盡請見諒。</li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="information-body">
+                            <div class="activity_sub">注意事項</div>
+                        </div>
+
+                        <div class="information-body">
+                            <div class="information-text">
+                                <ol>
+                                    <li>若因資料填寫不完整或不正確，視同放棄得獎資格，主辦單位將不另行通知或補寄獎品。</li>
+                                    <li>本活動兌換商品之詳細規格、顏色皆以實物為準，亦不得要求商品更換或折換現金</li>
+                                    <li>如商品因季節等不可抗力之因素無法再提供，主辦單位可保留更換等值商品之權利。</li>
+                                    <li><span>商品開箱請錄影以確保雙方權益！</span>若遇到商品數量錯誤/與活動商品不符/瑕疵，請在3天內提供主辦單位錄影證明。</li>
+                                    <li>若無法提供開箱錄影，將無法受理與商品相關任何問題。</li>
+                                    <li>參加本活動即同意本活動辦法、注意事項(含其更新修正內容)。如有違反，主辦單位得取消其得獎資格，不得異議。</li>
+                                    <li>主辦方有權檢視本活動參加者是否涉嫌有違常理之異常操作狀況，對於任何破壞本活動之行為保留法律訴權，終止參加資格並請求賠償。</li>
+                                    <li>活動期間如因不可抗拒之原因無法執行時，主辦單位有修改、暫停或終止本活動之權利。</li>
+                                    <li>除上述注意事項，本活動若有未盡事宜，主辦單位擁有隨時修改、變更、暫停及解釋活動內容之權利，修改訊息將於活動網站上公佈，不另行通知。
+                                    </li>
+                                    <li>如有問題請洽大創遊戲粉絲專頁。</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 標籤-獎品兌換 -->
+        <div id="vue_content" v-cloak>
+            <div class="tab_prizes text-center mt-5" id="tab_prizes">
+                <div class="tabTitle prizes_title mb-5">
+                    <p class="tabText">獎品兌換</p>
+                </div>
+                <div class="row exchangeCotainer text-center">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 m-auto px-2" v-for="item in prize">
+
+                        <div class="card rounded-lg border-dark p-3">
+                            <div class="picCotainer text-center">
+                                <p class="pic1" v-if="item.free_shipping == true">免運</p>
+                                <img :src="item.pic_url" class="pic2">
+                            </div>
+
+                            <div class="text-center">
+                                <h6 class="ellipsis mt-1 mb-0"><strong v-text="item.name"></strong></h6>
+                                <p class="ellipsis text-secondary my-1">剩餘數量：{{item.totalNum}}</p>
+                            </div>
+
+                            <div class="e-downPic">
+                                <!-- <div v-if="activity_data.activity_status == '3'">
+                                    <div class="e-button-disable p-1">
+                                        已結束
+                                    </div>
+                                </div> -->
+
+                                <!-- <div v-else-if="activity_data.activity_status == '1'">
+                                    <div class="e-button-disable p-1">
+                                        未開始
+                                    </div>
+                                </div> -->
+
+                                <!--未登入-->
+                                <!-- <div v-else-if="login_flag != '1'">
+                                    <div class="e-button-disable d-flex">
+                                        <img :src="activity_data.rules[prize.rule_id].pic_url">
+
+                                        <p v-for="card in activity_data.hasCards" v-if="card.total_count == null">
+                                            0 / @{{activity_data.rules[prize.rule_id].num}}
+                                        </p>
+
+                                    </div>
+                                </div> -->
+
+                                <!-- <div v-else>
+                                    <div class="e-button-disable p-1" v-if="prize.now_count == 0">
+                                    已兌完
+                                </div> -->
+
+                                <!-- 未達成 -->
+                                <!-- <div class="e-button-disable d-flex" v-else-if="activity_data.pairStatus[prize.id] == false">
+                        <img :src="activity_data.rules[prize.rule_id].pic_url">
+                        <p v-for="card in activity_data.hasCards" v-if="card.total_count != null">
+                            @{{card.total_count}} / @{{activity_data.rules[prize.rule_id].num}}
+                        </p>
+                    </div> -->
+
+                                <!-- 可兌換 -->
+                                <!-- <form v-else action="/activity/{{ $activity_elo->name }}/exchange" method="post">
+                        {{ csrf_field() }} -->
+                                <button class="e-button" type="submit" onclick="return(confirm('確認要兌換嗎？'))">
+                                    <!-- <input type="hidden" name="prize" :value="prize.id"> -->
+                                    <img :src="card.pic_url">
+                                    <p >
+                                        {{card.hasCard}} / {{item.ruleNum}}
+                                    </p>
+                                </button>
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 標籤-兌換情報 -->
+    <div class="tab_prizeList text-center mt-5" id="tab_prizeList">
+        <img src="assets/pic3.png" class="floatImg pic3">
+        <img src="assets/pic4.png" class="floatImg pic4">
+
+        <div class="tabTitle prizeList_title mb-5">
+            <p class="tabText">兌換情報</p>
+        </div>
+
+        <div class="prizeboard text-center">
+            <div class="prizeboard_data" id="history-board-list" style="overflow: auto;">
+                <div class="row py-1 mb-1" style="border-bottom:1px solid var(--hrcolor);">
+                    <div class="col">玩家名稱</div>
+                    <div class="col p-1">獲得獎勵</div>
+                    <div class="col">兌換時間</div>
+                </div>
+
+                <div class="row">
+                    <p class="col gamename ellipsis">貓主人</p>
+                    <p class="col ellipsis p-1" style="color:#FEDC0C">水耕蔬菜箱</p>
+                    <p class="col ellipsis">09-21 10:00</p>
+                </div>
+                <div class="row">
+                    <p class="col gamename ellipsis">碰碰</p>
+                    <p class="col ellipsis p-1" style="color:#FEDC0C">水耕蔬菜箱</p>
+                    <p class="col ellipsis">09-21 16:00</p>
+                </div>
+                <div class="row">
+                    <p class="col gamename ellipsis">芽比</p>
+                    <p class="col ellipsis p-1" style="color:#FEDC0C">水耕蔬菜箱</p>
+                    <p class="col ellipsis">09-22 01:30</p>
+                </div>
+                <div class="row">
+                    <p class="col gamename ellipsis">撲麥</p>
+                    <p class="col ellipsis p-1" style="color:#FEDC0C">水耕蔬菜箱</p>
+                    <p class="col ellipsis">09-22 01:30</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 標籤-合作夥伴 -->
+    <div class="tab_partners text-center mt-5" id="tab_partners">
+        <div class="tabTitle partners_title mb-5">
+            <p class="tabText">合作夥伴 </p>
+        </div>
+        <div class="slider partnerSlider m-auto" id="partnerSlider">
+            <img src="assets/partner1.jpeg">
+            <img src="assets/partner2.jpeg">
+            <img src="assets/partner3.jpeg">
+            <img src="assets/partner4.jpeg">
+            <img src="assets/partner5.jpeg">
+            <!-- <div v-for="(item, key) in material_data.partner_link">
+                        <img :src="item.src" href="item.href">
+                    </div> -->
+        </div>
+
+        <div class="row logoContainer justify-content-center text-center mt-5 mb-3">
+            <div class="col-3 col-md-2 p-3" data-aos="fade-up">
+                <img src="assets/partnerlogo1.png">
+            </div>
+        </div>
+    </div>
+
+    <!-- 固定在頁面下方的導航欄 -->
+    <nav class="navbar navbar-bottom fixed-bottom">
+        <a class="navbar-item col-3 text-center" href="#tab_contents">
+            <img src="assets/navbarIcon1.png">
+            <p>活動詳情</p>
+        </a>
+        <a class="navbar-item col-3 text-center" href="#tab_prizes">
+            <img src="assets/navbarIcon2.png">
+            <p>獎品兌換</p>
+        </a>
+        <a class="navbar-item col-3 text-center" href="#tab_partners">
+            <img src="assets/navbarIcon3.png">
+            <p>貓貓夥伴</p>
+        </a>
+    </nav>
+
+    <!-- 底部導覽圖 -->
+    <div class="footer">
+        <img src="assets/footer_farmActivity.jpg" onclick="goToPlay()">
+    </div>
+    </div>
+    </div>
+</body>
+
+
+
+<!-- <div class="container">
+        <div class="block a">
+            <h4>RWD-指定比例尺寸 max-width/min-widthimg</h4>
+        </div>
+        <div class="block b">
+            <h4>Ｂ(70%)</h4>
+        </div>
+        <div class="block c">
+            <h4>Ｃ(30%)</h4>
+        </div>
+        <div class="block d">
+            <h4>Ｄ(35%)</h4>
+        </div>
+        <div class="block e">
+            <h4>Ｅ(35%)</h4>
+        </div>
+        <div class="block f">
+            <h4>Ｆ(30%)</h4>
+        </div>
+        <div class="block g">
+            <h4>Ｇ(100%)</h4>
+        </div>
+    </div> -->
+
+<!-- <div class="row logoContainer">
+        <div class="col-sm-2">
+            <img src="assets/logo.png"></a>
+        </div>
+        <div class="col-sm-2">
+            <img src="assets/logo.png"></a>
+        </div>
+        <div class="col-sm-2">
+            <img src="assets/logo.png"></a>
+        </div>
+        <div class="col-sm-2">
+            <img src="assets/logo.png"></a>
+        </div>
+    </div> -->
+
+<script>
+    var vm = new Vue({
+        el: '#vue_content',
+        data: {
+            activity_data: [
+                // prize = {
+                //     id: [0, 1],
+                //     name: ['AAA', 'BBB'],
+                //     pic_url: ['assets/gift1.jpg', 'assets/gift2.jpg'],
+                //     free_shipping: [true, false],
+                //     totalNum: [10, 20],
+                // },
+                card = {
+                    pic_url: 'assets/card.png',
+                    hasCard:2
+                },
+                prize = [{
+                    id: 0,
+                    name: '水耕蔬菜箱',
+                    pic_url: 'assets/gift1.jpg',
+                    free_shipping: true,
+                    totalNum: 10, // 獎勵數量
+                    ruleNum: 5//兌換條件數量
+                }, {
+                    id: 1,
+                    name: '精美小禮物',
+                    pic_url: 'assets/gift2.jpg',
+                    free_shipping: false,
+                    totalNum: 20,
+                    ruleNum: 5
+                }
+                ],
+
+            ],
+            material_data: [],
+        },
+    });
+
+    $(function () {
+        AOS.init();
+    });
+
+    document.body.setAttribute("ontouchstart", "ontouchstart");
+
+    $(document).on('ready', function () {
+        $(document).click(function (e) {
+            e.stopPropagation();
+
+            var isVisible = $('.myNav-more').css('visibility');
+            if (isVisible == 'visible') {
+                closeNav()
+            }
+        });
+
+        $("#myNav-more").click(function (e) {
+            e.stopPropagation();
+        });
+    });
+
+    var topOffset
+    var suspend = function (e) {
+        e.preventDefault();
+    };
+
+    function openNav() {
+        $('#myNav-more').css('width', '90%');
+        $('#myNav-more').css('height', '70%');
+        $('#myNav-more').css('opacity', '1');
+        $('#myNav-more').css('visibility', 'visible');
+
+        topOffset = $(window).scrollTop()
+        $("body").css({
+            overflow: "hidden",
+            position: 'fixed',
+            width: "100%",
+            top: -topOffset
+        });
+        document.addEventListener("touchmove", suspend, false); //禁止页面滑动
+    }
+
+    function closeNav() {
+        $('#myNav-more').css('width', '0%');
+        $('#myNav-more').css('height', '0%');
+        $('#myNav-more').css('opacity', '0');
+        $('#myNav-more').css('visibility', 'hidden');
+
+        $("body").css({
+            'overflow': 'auto',
+            'position': 'static',
+            'top': 'auto'
+        });
+
+        window.scrollTo({
+            top: topOffset,
+            behavior: 'instant',
+        });
+
+        document.removeEventListener("touchmove", suspend, false)
+
+
+    }
+    $('#bannerSlider').slick({
+        autoplay: true,
+        autoplaySpeed: 3500,
+
+        dots: true,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev bannerSlider-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next bannerSlider-arrow-next"></button>',
+
+        infinite: true,
+    });
+
+    $('#partnerSlider').slick({
+        autoplay: true,
+        autoplaySpeed: 3500,
+
+        dots: true,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-prev partnerSlider-arrow-prev"></button>',
+        nextArrow: '<button type="button" class="slick-next partnerSlider-arrow-next"></button>',
+
+        infinite: true,
+        centerMode: true,
+        centerPadding: '0px',
+        slidesToShow: 3,
+        responsive: [{
+            breakpoint: 528,
+            settings: {
+                slidesToShow: 1,
+            }
+        },],
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,649 @@
+@charset "UTF-8";
+html,
+body {
+    scroll-behavior: smooth;
+    background-image: url("assets/bg_farmActivity.jpg");
+    padding-bottom: 30px;
+}
+
+.not-user-selectable {
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.a {
+    max-width: 100%;
+}
+
+.up-btn {
+    display: none !important;
+}
+
+.row {
+    margin: auto;
+    max-width: 1280px;
+    text-align: center;
+    align-items: center;
+}
+
+.col-6 {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.msgbox {
+    max-width: 400px;
+    min-width: 260px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    border: 3px solid #333333;
+    border-radius: 10px;
+    background-color: var(--subbg);
+    color: var(--white);
+    font-weight: 300;
+    line-height: 3;
+    text-align: center;
+}
+
+.msgbox-title {
+    border-bottom: 1px #4b4b4c solid;
+}
+
+.msgbox-title .closebtn {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    cursor: pointer;
+    color: var(--closeicon);
+}
+
+.msgbox-body {
+    line-height: 5;
+}
+
+.msgbox-bottom {
+    width: 100%;
+    bottom: 0;
+    background-color: var(--yes);
+    border-top: 1px #333333 solid;
+    border-radius: 10px;
+}
+
+.tabTitle {
+    margin: auto;
+    max-width: 450px;
+}
+
+.tabText {
+    background-size: contain;
+    color: white;
+    font-size: 28px;
+    line-height: 1.8;
+    letter-spacing: 3px;
+    margin: auto;
+    padding: 1.8rem 0rem;
+}
+
+.introduce_inner {
+    padding: 3rem 0;
+}
+
+.pic1 {
+    position: absolute;
+    width: 50px;
+    line-height: 50px;
+    color: white;
+    font-size: 12px;
+    transform: translate(-40%, -50%);
+    background-image: url("assets/freeShipping.svg");
+}
+
+.pic2 {
+    width: 100%;
+}
+
+.introduce_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/tab_introduce.png");
+}
+
+.tab_introduce h3 {
+    margin: auto;
+    padding: 1.2rem 0;
+    line-height: 2;
+}
+
+.tab_introduce {
+    height: 740px;
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    background-position: center;
+    background-image: url("assets/bg_introduce.png");
+}
+
+.contents_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/tab_contents.png");
+}
+
+.svg1 {
+    left: 1vw;
+    position: absolute;
+    animation: ani-big 5s infinite;
+    animation-direction: alternate;
+}
+
+.svg2 {
+    right: 8vw;
+    margin-top: 15rem;
+    position: absolute;
+    animation: ani-small 3s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes ani-big {
+    0% {
+        transform: rotate(-30deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(200deg) scale(1.1);
+    }
+}
+
+@keyframes ani-small {
+    0% {
+        transform: rotate(30deg) scale(0.9);
+    }
+    100% {
+        transform: rotate(-200deg) scale(1.1);
+    }
+}
+
+.contents_background {
+    height: 300px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/bg_contents.png");
+}
+
+.prizes_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/tab_prizes.png");
+}
+
+.prizeList_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/tab_prizeList.png");
+}
+
+.tab_prizeList {
+    padding: 4rem 0;
+    height: 660px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 兩張背景使用混合模式 */
+    background-image: url("assets/bg_prizeList.png"), url("assets/bg_farmActivity.jpg");
+    background-blend-mode: multiply;
+}
+
+.prizeboard {
+    width: 90%;
+    display: inline-block;
+}
+
+.prizeboard_data {
+    background: rgba(65, 62, 62, 0.5);
+    border: 1px solid var(--hrcolor);
+    color: white;
+    padding: 4px;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.pic3 {
+    max-width: 100%;
+    left: 4vw;
+    margin-top: 15rem;
+    position: absolute;
+}
+
+.pic4 {
+    max-width: 100%;
+    right: 4vw;
+    margin-top: 15rem;
+    position: absolute;
+}
+
+.tab_partners {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/bg_partners.png");
+}
+
+.partners_title {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url("assets/tab_partners.png");
+}
+
+.navbar-bottom {
+    max-height: 70px;
+}
+
+.fixed-bottom {
+    background-color: #252628;
+    color: var(--white);
+}
+
+.navbar-item p {
+    color: var(--white);
+    margin-bottom: 0rem;
+}
+
+
+/* 活動說明 */
+
+.myNav-more {
+    visibility: hidden;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 999;
+    width: 0;
+    height: 0;
+    max-width: 600px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #534741;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgb(22 35 54);
+    transition: 0.5s;
+}
+
+.myNav-more-content {
+    position: relative;
+    top: 2%;
+    max-width: 90%;
+    width: 500px;
+    margin: auto;
+}
+
+.myNav-more .closebtn {
+    position: absolute;
+    top: -30px;
+    right: 5px;
+    font-size: 60px;
+    z-index: 2;
+}
+
+.more-information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.more-information h1 {
+    color: white;
+    text-align: center;
+}
+
+.informationContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.information-body {
+    display: flex;
+    flex-direction: row;
+}
+
+.activity_sub {
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px 0;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+.information-text {
+    width: 500px;
+    color: white;
+    margin: 8px 0px;
+    line-height: 24px;
+}
+
+.information-text span {
+    color: #EAAC33;
+}
+
+.clearfix {
+    width: 100%;
+    content: '';
+    display: block;
+    clear: both;
+    margin: 3rem 0px 1rem 0px;
+}
+
+.c-button {
+    background-color: #3e3a39;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 12px;
+}
+
+@media (any-hover: none) {
+    .c-button:active {
+        background-color: #F39800;
+    }
+    .closebtn:active {
+        color: white;
+    }
+}
+
+@media (any-hover: hover) {
+    .c-button:hover {
+        background-color: #F39800;
+    }
+    .closebtn:hover {
+        color: white;
+    }
+}
+
+.stepItem {
+    padding: 0;
+}
+
+.stepContainer img {
+    max-width: 120px;
+}
+
+.stepContainer p {
+    margin: 1rem 0;
+    font-weight: bolder;
+}
+
+.l-btn {
+    float: left;
+    margin: 0px 0px 0px 12px;
+}
+
+.r-btn {
+    float: right;
+    margin: 0px 12px 0px 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.slick-slider {
+    background-color: transparent;
+}
+
+.slick-slide img {
+    width: 100%;
+}
+
+.slick-track {
+    margin-left: 0px
+}
+
+.slick-dots li.slick-active button:before {
+    font-size: 1.2rem;
+}
+
+.partnerSlider .slick-slide {
+    transition: all ease-in-out .3s;
+    opacity: .6;
+    transform: scale(0.8);
+}
+
+.partnerSlider .slick-center {
+    opacity: 1;
+    transform: scale(1)
+}
+
+.partnerSlider {
+    width: 80%;
+}
+
+.bannerSlider.slick-dots {
+    width: 1rem;
+    height: 1rem;
+}
+
+.bannerSlider-arrow-prev {
+    left: 1.2rem;
+    transform: scale(2);
+}
+
+.bannerSlider-arrow-prev:before {
+    content: '❮';
+    opacity: .7;
+}
+
+.bannerSlider-arrow-next {
+    right: 1.2rem;
+    background-color: transparent;
+    transform: scale(2);
+}
+
+.bannerSlider-arrow-next:before {
+    content: '❯';
+    opacity: .7;
+}
+
+.partnerSlider-arrow-prev:before {
+    content: '←';
+    color: black;
+    opacity: .7;
+    font-size: 40px;
+}
+
+.partnerSlider-arrow-prev {
+    top: 50%;
+    left: -1.2rem;
+    background-color: transparent;
+}
+
+.partnerSlider-arrow-next:before {
+    content: '→';
+    color: black;
+    opacity: .7;
+    font-size: 40px;
+}
+
+.partnerSlider-arrow-next {
+    top: 50%;
+    right: -1.2rem;
+    background-color: transparent;
+}
+
+.logoContainer img {
+    width: 100%;
+}
+
+.e-downPic {
+    margin: auto;
+    max-width: 70%;
+    width: 90%;
+}
+
+.e-button {
+    display: flex;
+    padding: 1%;
+    font-size: 1.6rem;
+    background-color: #fdd442;
+    border: 5px solid #ffc107;
+    border-radius: 10px;
+    box-shadow: 3px 5px #5b4f41;
+}
+
+.e-button:active {
+    background-color: #ffc107;
+    border-radius: 10px;
+    box-shadow: 1px 3px #666;
+    transform: translate(1px, 1px) scale(0.95);
+}
+
+.e-button img,
+.e-button-disable img {
+    margin: auto;
+    width: 30%;
+    max-width: 100%;
+}
+
+.e-button p,
+.e-button-disable p {
+    padding-top: 5px;
+    margin: auto;
+}
+
+.e-button-disable {
+    /* display: flex; */
+    padding: 1%;
+    font-size: 1.6rem;
+    background-color: #c9caca;
+    border: 5px solid #9fa0a0;
+    border-radius: 10px;
+    box-shadow: 3px 5px #3e3a39;
+}
+
+.ellipsis {
+    margin: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.footer img {
+    width: 100%;
+    height: auto;
+}
+
+@media (max-width: 575.98px) {
+    .navbar-item {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .navbar-item p {
+        font-size: 14px;
+        align-items: left;
+    }
+    .tabText {
+        font-size: 1.4rem;
+    }
+    .tab_introduce {
+        height: auto;
+        background-size: cover;
+    }
+    .tab_introduce h3 {
+        font-size: 1.2rem;
+    }
+    .introduce_left {
+        display: none;
+    }
+    .floatImg {
+        display: none;
+    }
+    .stepContainer {
+        margin: auto;
+        max-width: 100%;
+    }
+    .stepItem {
+        padding: 0 1rem;
+    }
+    .stepContainer p {
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: left;
+    }
+    .stepContainer img {
+        max-width: 120px;
+        float: left;
+    }
+    .e-downPic {
+        max-width: 90%;
+    }
+    .e-button p,
+    .e-button-disable p {
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+    .introduce_left {
+        display: none;
+    }
+    .stepContainer {
+        width: 80%;
+        margin: auto;
+    }
+    .floatImg {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .stepContainer {
+        width: 70%;
+        margin: auto;
+    }
+    .prizeboard {
+        width: 60%;
+    }
+    .logoContainer {
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .stepContainer {
+        width: 60%;
+        margin: auto;
+    }
+    .prizeboard {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .stepContainer {
+        width: 60%;
+        margin: auto;
+    }
+    .prizeboard {
+        width: 60%;
+    }
+}
