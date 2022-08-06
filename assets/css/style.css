@@ -302,7 +302,7 @@ section {
 
 .about .content ul li {
     margin-bottom: 20px;
-    font-size: 1.6vh;
+    font-size: 1rem;
     line-height: 1.6;
     display: flex;
     align-items: center;
@@ -361,7 +361,7 @@ section {
 
 .resume .resume-item ul li {
     padding-bottom: 10px;
-    font-size: 1.2vw;
+    font-size: 1rem;
 }
 
 .resume .resume-item:last-child {
@@ -453,12 +453,6 @@ section {
     background-color: #149ddd;
 }
 
-.skills .description {
-    margin-left: 80px;
-    line-height: 24px;
-    font-size: 14px;
-}
-
 
 /*--------------------------------------------------------------
 # WebProject
@@ -474,6 +468,7 @@ section {
 .webProject .webProject-wrap img {
     width: 100%;
 }
+
 .webProject .webProject-wrap .webProject-button {
     background-color: #363635;
     /* width: 30%; */
@@ -527,6 +522,24 @@ section {
     left: calc(50% - 20px);
 }
 
+.portfolios .swiper-pagination {
+    margin-top: 20px;
+    position: relative;
+}
+
+.portfolios .swiper-pagination .swiper-pagination-bullet {
+    margin-top: 2rem;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    opacity: 1;
+    border: 1px solid #2A2A2A;
+}
+
+.portfolios .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #6C6C6C;
+}
+
 .portfolios-button {
     background-color: #363635;
     width: 60%;
@@ -536,6 +549,37 @@ section {
     font-size: 18px;
     border-radius: 20px;
 }
+
+
+/*--------------------------------------------------------------
+# video
+--------------------------------------------------------------*/
+
+.video .video-button {
+    background-color: #363635;
+    /* width: 30%; */
+    /* margin-left: 60%; */
+    padding: 10px 20px;
+    color: white;
+    font-size: 1.8vw;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+#footer {
+    padding: 15px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    z-index: 9999;
+    background: #040b14;
+}
+
 
 @media (max-width: 1199px) {
     #footer {
