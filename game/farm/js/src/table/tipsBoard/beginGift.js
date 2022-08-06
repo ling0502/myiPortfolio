@@ -8,11 +8,11 @@ var dialog;
 export default class beginGift {
     create(scene) {
         var config = [
-            { key: 'beginGift', url: '/games/farm/assets/beginGift.png' },
+            { key: 'beginGift', url: './assets/beginGift.png' },
         ]
         var config2 = [{
             key: 'btn_receive',
-            url: '/games/farm/assets/btn_receive.png',
+            url: './assets/btn_receive.png',
             frameConfig: { frameWidth: 65, frameHeight: 40, }
         }]
 

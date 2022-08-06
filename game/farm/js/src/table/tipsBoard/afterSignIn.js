@@ -6,12 +6,12 @@ export default class afterSignIn {
 
     create(scene, giftType, frame, num) {
         var config = [
-            { key: 'bg_smallBoard', url: '/games/farm/assets/bg_smallBoard.png' },
+            { key: 'bg_smallBoard', url: './assets/bg_smallBoard.png' },
         ]
 
         var config2 = [{
             key: 'title_afterSignIn',
-            url: '/games/farm/assets/title_afterSignIn.png',
+            url: './assets/title_afterSignIn.png',
             frameConfig: { frameWidth: 425, frameHeight: 280, }
         }]
 

@@ -10,7 +10,7 @@ export default class noticeBoard {
 
     create(scene, tipsType, isSmallBoard, cost, coinFrame, landID) {
         var config = [
-            { key: 'bg_noticeBoard', url: '/games/farm/assets/bg_noticeBoard.png' },
+            { key: 'bg_noticeBoard', url: './assets/bg_noticeBoard.png' },
         ]
 
         scene.load.image(config);

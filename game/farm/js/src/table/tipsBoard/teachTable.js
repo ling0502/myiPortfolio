@@ -7,13 +7,13 @@ export default class teachTable {
     create(scene, page, isSmallBoard) {
 
         var config = [
-            { key: 'bg_teach', url: '/games/farm/assets/teach/bg_teach.png' },
-            { key: 'teach_land', url: '/games/farm/assets/teach/teach_land.png' },
-            { key: 'teach_ui', url: '/games/farm/assets/teach/teach_ui.png' },
-            { key: 'teach_book', url: '/games/farm/assets/teach/teach_book.png' },
-            { key: 'teach_warehouse', url: '/games/farm/assets/teach/teach_warehouse.png' },
-            { key: 'teach_shop', url: '/games/farm/assets/teach/teach_shop.png' },
-            { key: 'teach_button', url: '/games/farm/assets/teach/teach_button.png' },
+            { key: 'bg_teach', url: './assets/teach/bg_teach.png' },
+            { key: 'teach_land', url: './assets/teach/teach_land.png' },
+            { key: 'teach_ui', url: './assets/teach/teach_ui.png' },
+            { key: 'teach_book', url: './assets/teach/teach_book.png' },
+            { key: 'teach_warehouse', url: './assets/teach/teach_warehouse.png' },
+            { key: 'teach_shop', url: './assets/teach/teach_shop.png' },
+            { key: 'teach_button', url: './assets/teach/teach_button.png' },
         ]
 
         scene.load.image(config);

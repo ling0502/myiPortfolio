@@ -7,22 +7,22 @@ var dialog;
 export default class levelUp {
     create(scene, award, unlock) {
         var config = [
-            { key: 'bg_smallBoard', url: '/games/farm/assets/bg_smallBoard.png' },
-            { key: 'obj_warehouse', url: '/games/farm/assets/obj_warehouse.png' },
-            { key: 'obj_new', url: '/games/farm/assets/obj_new.png' },
+            { key: 'bg_smallBoard', url: './assets/bg_smallBoard.png' },
+            { key: 'obj_warehouse', url: './assets/obj_warehouse.png' },
+            { key: 'obj_new', url: './assets/obj_new.png' },
         ]
 
         var config2 = [{
             key: 'title_levelUp',
-            url: '/games/farm/assets/title_levelUp.png',
+            url: './assets/title_levelUp.png',
             frameConfig: { frameWidth: 425, frameHeight: 280, }
         }, {
             key: 'obj_seed',
-            url: '/games/farm/assets/obj_seed.png',
+            url: './assets/obj_seed.png',
             frameConfig: { frameWidth: 120, frameHeight: 100, }
         }, {
             key: 'obj_tool',
-            url: '/games/farm/assets/obj_tool.png',
+            url: './assets/obj_tool.png',
             frameConfig: { frameWidth: 120, frameHeight: 100, }
         }]
 

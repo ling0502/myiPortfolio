@@ -10,7 +10,7 @@ var dialog;
 export default class buyBoard {
     create(scene, data) {
         var config = [
-            { key: 'bg_goodsBoard', url: '/games/farm/assets/bg_goodsBoard.png' },
+            { key: 'bg_goodsBoard', url: './assets/bg_goodsBoard.png' },
         ]
 
         scene.load.image(config);

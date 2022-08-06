@@ -18,7 +18,7 @@ export default class expandBoard {
 
     create(scene, data, coinFrame, coinType) {
         var config = [
-            { key: 'bg_expandBoard', url: '/games/farm/assets/bg_expandBoard.png' },
+            { key: 'bg_expandBoard', url: './assets/bg_expandBoard.png' },
         ]
 
         scene.load.image(config);

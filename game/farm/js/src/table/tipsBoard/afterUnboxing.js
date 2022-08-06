@@ -8,11 +8,11 @@ var dialog;
 export default class afterUnboxing {
     create(scene) {
         var config = [
-            { key: 'bg_smallBoard', url: '/games/farm/assets/bg_smallBoard.png' },
+            { key: 'bg_smallBoard', url: './assets/bg_smallBoard.png' },
         ]
         var config2 = [{
             key: 'title_afterUnboxing',
-            url: '/games/farm/assets/title_afterUnboxing.png',
+            url: './assets/title_afterUnboxing.png',
             frameConfig: { frameWidth: 425, frameHeight: 280, }
         }]
 

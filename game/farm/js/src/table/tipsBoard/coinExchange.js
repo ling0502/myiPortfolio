@@ -11,7 +11,7 @@ export default class coinExchange {
 
     create(scene) {
         var config = [
-            { key: 'bg_coinExchangeBoard', url: '/games/farm/assets/bg_coinExchangeBoard.png' },
+            { key: 'bg_coinExchangeBoard', url: './assets/bg_coinExchangeBoard.png' },
         ]
 
         scene.load.image(config);
