@@ -1,24 +1,13 @@
-div {
-    border-width: 1px;
-}
-
-
 .primary {
     height: 600px;
-    border-width: 5px;
-    border-style: solid;
 }
 
 .primary video {
     width: 100%;
     height: 100%;
-    /* width: 540px;
-    height: 960px; */
 }
 
 .secondary {
-    border-width: 5px;
-    border-style: solid;
     font-size: 0.8rem;
     line-height: 1.2rem;
     white-space: normal;

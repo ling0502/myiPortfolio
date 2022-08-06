@@ -34,7 +34,7 @@ a:hover {
     visibility: hidden;
     opacity: 0;
     right: 15px;
-    bottom: 15px;
+    bottom: 40px;
     z-index: 996;
     background: rgb(15, 15, 15);
     width: 40px;
@@ -96,27 +96,6 @@ a:hover {
 
 #header .profile h1 a,
 #header .profile h1 a:hover {
-    color: #fff;
-    text-decoration: none;
-}
-
-#header .profile .social-links a {
-    font-size: 18px;
-    display: inline-block;
-    background: #212431;
-    color: #fff;
-    line-height: 1;
-    padding: 8px 0;
-    margin-right: 4px;
-    border-radius: 50%;
-    text-align: center;
-    width: 36px;
-    height: 36px;
-    transition: 0.3s;
-}
-
-#header .profile .social-links a:hover {
-    background: rgb(15, 15, 15);
     color: #fff;
     text-decoration: none;
 }
@@ -347,7 +326,7 @@ section {
 }
 
 .resume .resume-item h5 {
-    font-size: 16px;
+    font-size: 1px;
     background: #e4edf9;
     padding: 5px 15px;
     display: inline-block;
@@ -471,11 +450,9 @@ section {
 
 .webProject .webProject-wrap .webProject-button {
     background-color: #363635;
-    /* width: 30%; */
-    /* margin-left: 60%; */
     padding: 10px 20px;
     color: white;
-    font-size: 1.8vw;
+    font-size: 16px;
     border-radius: 20px;
     text-align: center;
 }
@@ -546,7 +523,7 @@ section {
     margin: auto;
     padding: 10px 20px;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 20px;
 }
 
@@ -557,11 +534,12 @@ section {
 
 .video .video-button {
     background-color: #363635;
-    /* width: 30%; */
-    /* margin-left: 60%; */
+    width: 70%;
+    margin: auto;
+    margin-bottom: 30px;
     padding: 10px 20px;
     color: white;
-    font-size: 1.8vw;
+    font-size: 16px;
     border-radius: 20px;
     text-align: center;
 }
@@ -571,7 +549,7 @@ section {
 --------------------------------------------------------------*/
 
 #footer {
-    padding: 15px;
+    padding: 7px;
     position: fixed;
     left: 0;
     bottom: 0;
