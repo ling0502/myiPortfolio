@@ -1,5 +1,5 @@
 .primary {
-    height: 600px;
+    height: 450px;
 }
 
 .primary video {
@@ -20,4 +20,13 @@
 
 .secondary .list img {
     width: 100%;
+}
+
+.secondary .list h5 {
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+}
+
+.secondary .list p {
+    margin-bottom: 0;
 }
