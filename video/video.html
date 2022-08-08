@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>showMyVideo</title>
+    <meta name="description" content="Hey,Click the link to learn more about me">
+  
+    <!-- Favicons -->
+    <link href="assets/favicon.png" rel="icon">
+    <link href="assets/favicon.png" rel="apple-touch-icon">
+    <meta property="og:image" content="assets/favicon.png" />
 
     <link href="./style.css" rel="stylesheet">
     <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -14,7 +20,7 @@
 <body>
     <section id="player">
         <div class="row setWidth">
-            <div class="primary col-xl-6">
+            <div id="primary" class="primary col-xl-6">
                 <video preload="auto" autoplay controls src="assets/v_028.mp4" id="videoSource">
                 </video>
                 <!-- src="https://drive.google.com/uc?export=download&id=1eROpmQMeKlfZoXq2UmBa_UWkCir-F6ne" -->
@@ -22,7 +28,7 @@
 
             <div id="vue_content" class="secondary col-xl-6">
                 <div></div>
-                <div class="list row" v-for="item in game" v-on:click=chooseVideo(item.id)>
+                <div class="videoList row" v-for="item in game" v-on:click=chooseVideo(item.id)>
                     <div class="col-4 p-1">
                         <img :src="item.img_src" alt="">
                     </div>
@@ -32,6 +38,8 @@
                     </div>
                 </div>
             </div>
+
+            <div><a href="#primary"><img src="../assets/img/portfolios/games013.png" alt=""></a></div>
     </section>
 
 </body>
@@ -112,6 +120,17 @@
                 document.getElementById("videoSource").src = this.game[id].video_src
                 // document.getElementById("videoSource").src =
                 //     "https://drive.google.com/uc?export=download&id=" + this.game[id].video_src
+
+                var height = document.documentElement.scrollTop || document.body.scrollTop;
+                var t = setInterval(() => {
+                    height -= 50;
+                    if (height > 0) {
+                        window.scrollTo(0, height);
+                    } else {
+                        window.scrollTo(0, 0);
+                        clearInterval(t);
+                    }
+                }, 10);
             }
         }
     });

@@ -13,20 +13,20 @@
     white-space: normal;
 }
 
-.secondary .list {
+.secondary .videoList {
     align-items: center;
     margin-bottom: 8px;
 }
 
-.secondary .list img {
+.secondary .videoList img {
     width: 100%;
 }
 
-.secondary .list h5 {
+.secondary .videoList h5 {
     margin-bottom: 0.5rem;
     font-weight: 800;
 }
 
-.secondary .list p {
+.secondary .videoList p {
     margin-bottom: 0;
 }
