@@ -1,0 +1,52 @@
+.circle-chart {
+  /* width: 100px;
+  height: 100px; */
+  clip-path: circle(50% at 50% 50%);
+  background-color: #ededed; 
+}
+
+.circle-chart__circle {
+  /* stroke: #00acc1; */
+  stroke-width: 6;
+  /* stroke-linecap: square; */
+  fill: none;
+  animation: circle-chart-fill 1.2s reverse;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+.circle-chart__background {
+  opacity: 0.4;
+  /* stroke: #dbdada; */
+  stroke-width: 6;
+  fill: none; 
+}
+
+.circle-chart__subline,
+.circle-chart__percent {
+    text-anchor: middle;
+    font-size: 4px;
+}
+
+.success-stroke {
+  stroke: #18b810;
+}
+
+.warning-stroke {
+  stroke: #ffbb33;
+}
+
+.danger-stroke {
+  stroke: #ef2d2d;
+}
+
+@keyframes circle-chart-fill {
+  to { stroke-dasharray: 0 100; }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

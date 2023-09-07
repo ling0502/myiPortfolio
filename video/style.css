@@ -1,32 +1,49 @@
 .primary {
-    height: 450px;
+  height: 450px;
+}
+
+.game-button{
+  display: none;
+}
+
+@media (min-width: 991px) {
+  .primary {
+    height: 600px;
+  }
+  .game-button{
+    display: flex;
+    margin: auto;
+  }
 }
 
 .primary video {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-.secondary {
+/* .secondary {
     font-size: 0.8rem;
     line-height: 1.2rem;
     white-space: normal;
-}
+} */
 
 .secondary .videoList {
-    align-items: center;
-    margin-bottom: 8px;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-right: 40px;
 }
 
 .secondary .videoList img {
-    width: 100%;
+  width: 100%;
 }
 
 .secondary .videoList h5 {
-    margin-bottom: 0.5rem;
-    font-weight: 800;
+  margin-bottom: 0.5rem;
+  font-weight: 800;
 }
 
 .secondary .videoList p {
-    margin-bottom: 0;
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  padding-top: 5px;
 }

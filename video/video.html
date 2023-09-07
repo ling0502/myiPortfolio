@@ -19,21 +19,22 @@
 
 <body>
     <section id="player">
-        <div class="row">
-            <div id="primary" class="primary col-xl-6">
+        <div class="row" id="vue_content" >
+            <div id="primary" class="primary col-lg-6">
                 <video preload="auto" autoplay controls src="assets/v_028.mp4" id="videoSource">
                 </video>
-                <!-- src="https://drive.google.com/uc?export=download&id=1eROpmQMeKlfZoXq2UmBa_UWkCir-F6ne" -->
+
+                <div class="m-5"></div>
+                <button type="button" class="game-button btn-success btn-lg px-5" @click="goToGame()">前 往 試 玩</button>
             </div>
 
-            <div id="vue_content" class="secondary col-xl-6">
-                <div></div>
+            <div class="secondary col-lg-6">
                 <div class="videoList row" v-for="item in game" v-on:click=chooseVideo(item.id)>
                     <div class="col-4 p-1">
-                        <img :src="item.img_src" alt="">
+                        <img :src="item.img_src" class="rounded-3">
                     </div>
                     <div class="col-8 p-1">
-                        <h5>{{item.title}}</h5>
+                        <h4><B>{{item.title}}</B></h4>
                         <p>{{item.content}}</p>
                     </div>
                 </div>
@@ -48,65 +49,67 @@
         el: '#vue_content',
         data() {
             return {
+                choosedVideo : 6,
+
                 game: [{
                     id: '0',
                     img_src: '../assets/img/portfolios/games013.png',
-                    // video_src: '1qzEJ5CvTfupbmIzrZ55WPVfqzXCDuCSl',
                     video_src: 'assets/v_013.mp4',
+                    game_url:'../game/games013/index.html',
                     title: "影片一【細菌噴噴】",
                     content: "無所不在的細菌病毒，危害著小寶貝們的童年歡樂時光，快和小恐龍一起消滅細菌吧",
                 }, {
                     id: '1',
                     img_src: '../assets/img/portfolios/games014.png',
-                    // video_src: '1qxvY1V8i1NbnR9i-BrRnV-Xma2LyHObg',
                     video_src: 'assets/v_014.mp4',
+                    game_url:'../game/games014/index.html',
                     title: "影片二【星際救援】",
                     content: "期待已久的宇宙探險之旅，認識了好多星系，好玩又刺激，哎呀！被困住了，誰來救救我們呀～",
                 }, {
                     id: '2',
                     img_src: '../assets/img/portfolios/games017.png',
-                    // video_src: '1qvuEqkxIw6c2lVniehMZQLFo3yi8dQLU',
                     video_src: 'assets/v_017.mp4',
+                    game_url:'../game/games017/index.html',
                     title: "影片三【防疫先鋒】",
                     content: "整座城市都被病毒攻陷了，快來協助小小研究員，帶著藥水去解救大家吧",
 
                 }, {
                     id: '3',
                     img_src: '../assets/img/portfolios/games018.png',
-                    // video_src: '1qvFTU0Ihb8pAMbufT9ArqOLcRcC2WRXj',
                     video_src: 'assets/v_018.mp4',
+                    game_url:'../game/games018/index.html',
                     title: "影片四【恰恰】",
                     content: "不愧是享譽國際的台灣夜市美食，看著超過上限的體重，能否成功逃離紅豆餅的誘惑呢",
 
                 }, {
                     id: '4',
                     img_src: '../assets/img/portfolios/games020.png',
-                    // video_src: '1quSXZeaPwGLmPBwlA9aHc5fH3dZqq29d',
                     video_src: 'assets/v_020.mp4',
+                    game_url:'../game/games020/index.html',
                     title: "影片五【菇之鄉】",
                     content: "來到傳說中的古都埔豐鄉，趕上村中志願職者招募，是時候表演真正的技術了！",
 
                 }, {
                     id: '5',
                     img_src: '../assets/img/portfolios/games027.png',
-                    // video_src: '1qdcgJnHR2Wn4YDv8QgGmCHvCBih9Di1-',
                     video_src: 'assets/v_027.mp4',
+                    game_url:'../game/games027/index.html',
                     title: "影片六【美食同樂會】",
                     content: "人們總說美食能夠治癒心靈，轉一轉找到相同的甜點，一起體驗不同的派對風格吧",
 
                 }, {
                     id: '6',
                     img_src: '../assets/img/portfolios/games028.jpg',
-                    // video_src: '1r-x5YG_i_7yVUgoeD1EWmYuozPdnEczP',
                     video_src: 'assets/v_028.mp4',
+                    game_url:'../game/games028/index.html',
                     title: "影片七【夏祭金魚之旅】",
                     content: "熱鬧的夏日慶典煙花逐一綻放，驚醒了池中悠哉的小金魚，危機感迫使一場逃亡之旅的展開",
 
                 }, {
                     id: '7',
                     img_src: '../assets/img/portfolios/farm.jpg',
-                    // video_src: '1rCcPehVvRr1Uglm2qN7wrYphvv-u6sin',
                     video_src: 'assets/v_farm.mp4',
+                    game_url:'../game/farm/index.html',
                     title: "影片八【貓農趣】",
                     content: "喜歡到處旅遊的的貓老闆，被這裡美麗的景色深深吸引，決定開始自給自足的悠閒生活",
 
@@ -116,10 +119,8 @@
         },
         methods: {
             chooseVideo(id) {
+                this.choosedVideo = id;
                 document.getElementById("videoSource").src = this.game[id].video_src
-                // document.getElementById("videoSource").src =
-                //     "https://drive.google.com/uc?export=download&id=" + this.game[id].video_src
-
                 var height = document.documentElement.scrollTop || document.body.scrollTop;
                 var t = setInterval(() => {
                     height -= 50;
@@ -130,6 +131,10 @@
                         clearInterval(t);
                     }
                 }, 10);
+            },
+            goToGame() {
+                var gameUrl = this.game[this.choosedVideo].game_url;
+                location.href = gameUrl;
             }
         }
     });

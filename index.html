@@ -22,8 +22,26 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-</head>
+  <link href="assets/css/progresscircle.css" rel="stylesheet">
 
+  
+
+  <!-- Vendor JS Files -->
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>   
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+   
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/progresscircle.js"></script>
+</head>
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
@@ -105,8 +123,8 @@
               <li><i class="bi bi-chevron-right"></i> <strong>姓名：</strong> <span>蔡芷羚</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>生日：</strong> <span>1995/05/02</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>學歷：</strong> <span>高雄應用科大 資訊管理系 (畢)</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>就業狀態：</strong> <span>在職中</span></li>
-              <li><i class="bi bi-chevron-right"></i> <strong>希望職務：</strong> <span>遊戲工程師 / 前端工程師</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>就業狀態：</strong> <span>待業中</span></li>
+              <li><i class="bi bi-chevron-right"></i> <strong>希望職務：</strong> <span>軟體工程師 / 網頁工程師</span></li>
               <li><i class="bi bi-chevron-right"></i> <strong>聯絡信箱：</strong> <span>r12435687@gmail.com</span></li>
             </ul>
           </div>
@@ -125,6 +143,20 @@
 
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
+
+            <h3 class="resume-title">職涯訓練</h3>
+            <div class="resume-item">
+              <h4>資展國際 -跨域Java軟體工程師就業養成班</h4>
+              <h5>2023/03 - 2023/07</h5>
+              <ul>
+                <li>網頁設計入門：Html、CSS、Bootstrap響應式</li>
+                <li>網頁程式設計：JavaScript、jQuery</li>
+                <li>資料庫建置：MySQL</li>
+                <li>前後端整合開發：Node.JS、RESTful API、Ajax </li>
+                <li>Java程式設計：Hibernate、Spring（MVC、Boot）</li>
+                <li>其他技術：搭配Dialogflow處理自然語言，連動lineBot在網站上提供智慧客服機器人</li>
+              </ul>
+            </div>
 
             <h3 class="resume-title">學歷</h3>
             <div class="resume-item">
@@ -150,6 +182,7 @@
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">工作經歷</h3>
+
             <div class="resume-item">
               <h4>網頁遊戲工程師</h4>
               <h5>2019/10 - 2021/10</h5>
@@ -189,7 +222,44 @@
         </div>
 
         <div class="row skills-content">
-          <div class="col-md-6 icon-box" data-aos="fade-up">
+          <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="100">HTML5</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="100">CSS3</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="100">JavaScript</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="100">JQuery</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="100">Bootstrap</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="70">MySQL</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="70">Java</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="60">Hibernate</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="60">Spring</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="70">Spring MVC</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="70">Spring Boot</div>
+        </div>
+        <div class="col-md-3 col-6 p-4">
+            <div class="circlechart" data-percentage="30">Angular</div>
+        </div>
+
+          <!-- <div class="col-md-6 icon-box" data-aos="fade-up">
             <div class="icon"><img src="./assets/img/skills/logo_h5.png" alt=""></div>
             <div class="progress">
               <h4 class="title">HTML<span class="val">100%</span></h4>
@@ -203,9 +273,9 @@
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><img src="./assets/img/skills/logo_css.png" alt=""></div>
             <div class="progress">
-              <h4 class="title">CSS<span class="val">90%</span></h4>
+              <h4 class="title">CSS<span class="val">100%</span></h4>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -214,9 +284,20 @@
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
             <div class="icon"><img src="./assets/img/skills/logo_js.png" alt=""></div>
             <div class="progress">
-              <h4 class="title">JavaScript<span class="val">90%</span></h4>
+              <h4 class="title">JavaScript<span class="val">100%</span></h4>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><img src="./assets/img/skills/logo_jq.png" alt=""></div>
+            <div class="progress">
+              <h4 class="title">JQuery<span class="val">100%</span></h4>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
@@ -236,15 +317,15 @@
           <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><img src="./assets/img/skills/logo_bs.png" alt=""></div>
             <div class="progress">
-              <h4 class="title">Bootstrap<span class="val">85%</span></h4>
+              <h4 class="title">Bootstrap<span class="val">100%</span></h4>
               <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
                 </div>
               </div>
             </div>
           </div>
 
-        </div>
+        </div> -->
       </div>
     </section>
     <!-- End Skills Section -->
@@ -479,15 +560,6 @@
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
       class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
 
 </body>
 
