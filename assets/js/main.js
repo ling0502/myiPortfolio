@@ -1,214 +1,84 @@
-/**
- * Template Name: iproduct - v3.6.0
- * Template URL: https://bootstrapmade.com/iproduct-bootstrap-product-websites-template/
- * Author: BootstrapMade.com
- * License: https://bootstrapmade.com/license/
- */
 $(function () {
+    // 啟用嚴格模式
     "use strict";
 
-    /**
-     * Easy selector helper function
-     */
-    const select = (el, all = false) => {
-        el = el.trim()
-        if (all) {
-            return [...document.querySelectorAll(el)]
-        } else {
-            return document.querySelector(el)
-        }
-    }
-
-    /**
-     * Easy event listener function
-     */
-    const on = (type, el, listener, all = false) => {
-        let selectEl = select(el, all)
-        if (selectEl) {
-            if (all) {
-                selectEl.forEach(e => e.addEventListener(type, listener))
-            } else {
-                selectEl.addEventListener(type, listener)
-            }
-        }
-    }
-
-    /**
-     * Easy on scroll event listener 
-     */
-    const onscroll = (el, listener) => {
-        el.addEventListener('scroll', listener)
-    }
-
-    /**
-     * Navbar links active state on scroll
-     */
-    let navbarlinks = select('#navbar .scrollto', true)
+    // 左側導覽列 連結&樣式控制
+    let navbarlinks = $('#navbar .scrollto');
     const navbarlinksActive = () => {
         let position = window.scrollY + 200
-        navbarlinks.forEach(navbarlink => {
-            if (!navbarlink.hash) return
-            let section = select(navbarlink.hash)
-            if (!section) return
-            if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-                navbarlink.classList.add('active')
+        navbarlinks.each(function () {
+            if (!this.hash) return;
+            let section = $(this.hash);
+            if (!section.length) return;
+            if (position >= section.offset().top && position <= (section.offset().top + section.outerHeight())) {
+                $(this).addClass('active');
             } else {
-                navbarlink.classList.remove('active')
+                $(this).removeClass('active');
             }
-        })
+        });
     }
-    window.addEventListener('load', navbarlinksActive)
-    onscroll(document, navbarlinksActive)
+    $(window).on('load', navbarlinksActive);
+    $(document).on('scroll', navbarlinksActive);
 
-    /**
-     * Scrolls to an element with header offset
-     */
+    // 自定義(共用)：畫面捲動平滑動畫
     const scrollto = (el) => {
-        let elementPos = select(el).offsetTop
+        let elementPos = $(el).offset().top;
         window.scrollTo({
             top: elementPos,
             behavior: 'smooth'
-        })
+        });
     }
 
-    /**
-     * Back to top button
-     */
-    let backtotop = select('.back-to-top')
-    if (backtotop) {
+    // 返回頂端按鈕
+    let backtotop = $('.back-to-top');
+    if (backtotop.length) {
         const toggleBacktotop = () => {
             if (window.scrollY > 100) {
-                backtotop.classList.add('active')
+                backtotop.addClass('active');
             } else {
-                backtotop.classList.remove('active')
+                backtotop.removeClass('active');
             }
         }
-        window.addEventListener('load', toggleBacktotop)
-        onscroll(document, toggleBacktotop)
+        $(window).on('load', toggleBacktotop);
+        $(document).on('scroll', toggleBacktotop);
     }
 
-    /**
-     * Mobile nav toggle
-     */
-    on('click', '.mobile-nav-toggle', function (e) {
-        this.classList.toggle('bi-list')
-        this.classList.toggle('bi-x')
-    })
+    // 行動裝置版 上方導覽列icon切換 - 點擊導覽列icon時
+    $('.mobile-nav-toggle').on('click', function (e) {
+        $(this).toggleClass('bx-x');
+    });
 
-    /**
-     * Mobile nav-item toggle
-     */
-    let navbarToggle = select('.mobile-nav-toggle')
-    on('click', '#mobileNavbar .scrollto', function (e) {
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-    }, true)
+    // 行動裝置版 上方導覽列icon切換 - 點擊導覽列項目時
+    let navbarToggle = $('.mobile-nav-toggle');
+    $('#mobileNavbar .scrollto').on('click', function (e) {
+        navbarToggle.toggleClass('bx-x');
+    });
 
-
-    /**
-     * Scroll with ofset on links with a class name .scrollto
-     */
-    on('click', '.scrollto', function (e) {
-        if (select(this.hash)) {
-            e.preventDefault()
-
-            let body = select('body')
-            if (body.classList.contains('mobile-nav-active')) {
-                body.classList.remove('mobile-nav-active')
-                let navbarToggle = select('.mobile-nav-toggle')
-                navbarToggle.classList.toggle('bi-list')
-                navbarToggle.classList.toggle('bi-x')
+    // 左側導覽列控制
+    $('.scrollto').on('click', function (e) {
+        if ($(this.hash).length) {
+            e.preventDefault();
+            let body = $('body');
+            if (body.hasClass('mobile-nav-active')) {
+                body.removeClass('mobile-nav-active');
+                let navbarToggle = $('.mobile-nav-toggle');
+                navbarToggle.toggleClass('bi-list bi-x');
             }
-            scrollto(this.hash)
-        }
-    }, true)
-
-    /**
-     * Scroll with ofset on page load with hash links in the url
-     */
-    window.addEventListener('load', () => {
-        if (window.location.hash) {
-            if (select(window.location.hash)) {
-                scrollto(window.location.hash)
-            }
+            scrollto(this.hash);
         }
     });
 
-    /**
-     * Skills animation
-     */
-    let skilsContent = select('.skills-content');
-    if (skilsContent) {
-        new Waypoint({
-            element: skilsContent,
-            offset: '80%',
-            handler: function (direction) {
-                let progress = select('.progress .progress-bar', true);
-                progress.forEach((el) => {
-                    el.style.width = el.getAttribute('aria-valuenow') + '%'
-                });
-            }
-        })
-    }
-
-    /**
-     * Porfolio isotope and filter
-     */
-    window.addEventListener('load', () => {
-        let productContainer = select('.product-container');
-        if (productContainer) {
-            let productIsotope = new Isotope(productContainer, {
-                itemSelector: '.product-item'
-            });
-
-            let productFilters = select('#product-flters li', true);
-
-            on('click', '#product-flters li', function (e) {
-                e.preventDefault();
-                productFilters.forEach(function (el) {
-                    el.classList.remove('filter-active');
-                });
-                this.classList.add('filter-active');
-
-                productIsotope.arrange({
-                    filter: this.getAttribute('data-filter')
-                });
-                productIsotope.on('arrangeComplete', function () {
-                    AOS.refresh()
-                });
-            }, true);
+    // 刷新後 頁面捲動到上次的位置
+    $(window).on('load', () => {
+        if (window.location.hash && $(window.location.hash).length) {
+            scrollto(window.location.hash);
         }
-
     });
 
-
-    /**
-    * Services animation
-    */
-    let servicesContent = select('.services-content');
-    if (servicesContent) {
-        new Waypoint({
-            element: servicesContent,
-            offset: '80%',
-            handler: function (direction) {
-                let progress = select('.progress .progress-bar', true);
-                progress.forEach((el) => {
-                    el.style.width = el.getAttribute('aria-valuenow') + '%'
-                });
-            }
-        })
-    }
-
-    /**
-     * Portfolios slider
-     */
+    // 遊戲專案 輪播插件效果(swiper)
     new Swiper('.portfolios-slider', {
         speed: 600,
         loop: true,
-        // autoplay: {
-        //   delay: 5000,
-        //   disableOnInteraction: false
-        // },
         slidesPerView: 'auto',
         pagination: {
             el: '.swiper-pagination',
@@ -220,12 +90,10 @@ $(function () {
                 slidesPerView: 1,
                 spaceBetween: 20
             },
-
             768: {
                 slidesPerView: 2,
                 spaceBetween: 30
             },
-
             1200: {
                 slidesPerView: 3,
                 spaceBetween: 20
@@ -233,10 +101,8 @@ $(function () {
         }
     });
 
-    /**
-     * Animation on scroll
-     */
-    window.addEventListener('load', () => {
+    // 滾動框架動畫(AOS)
+    $(window).on('load', () => {
         AOS.init({
             duration: 1000,
             easing: 'ease-in-out',
@@ -245,4 +111,4 @@ $(function () {
         })
     });
 
-})
+});

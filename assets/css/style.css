@@ -17,6 +17,7 @@ body {
 a {
     color: rgb(15, 15, 15);
     text-decoration: none;
+
 }
 
 a:hover {
@@ -47,11 +48,6 @@ a:hover {
     font-size: 28px;
     color: #fff;
     line-height: 0;
-}
-
-.back-to-top:hover {
-    background: #2eafec;
-    color: #fff;
 }
 
 .back-to-top.active {

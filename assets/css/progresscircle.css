@@ -6,9 +6,7 @@
 }
 
 .circle-chart__circle {
-  /* stroke: #00acc1; */
   stroke-width: 6;
-  /* stroke-linecap: square; */
   fill: none;
   animation: circle-chart-fill 1.2s reverse;
   transform: rotate(-90deg);
@@ -17,7 +15,6 @@
 
 .circle-chart__background {
   opacity: 0.4;
-  /* stroke: #dbdada; */
   stroke-width: 6;
   fill: none; 
 }
